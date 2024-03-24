@@ -7,7 +7,9 @@ import FormComponent from './components/Form/ocrForm'
 import AboutUs from './components/About/about'
 import Contact from './components/Contact/contact'
 import Footer from './components/Footer/footer';
-import NotFound from './components/NotFound/NotFound'
+
+import NotFound from './components/Errors/404-NotFound/NotFound';
+import InternalServerError from './components/Errors/500-InternalError/InternalServerError';
 
 import PrivacyPolicy from './components/Copyrighting/PrivacyPolicy/privacyPolicy';
 import TermsAndConditions from './components/Copyrighting/TermsAndConditions/termsAndConditions';
@@ -77,6 +79,7 @@ function App() {
             }
           />
           <Route path='*' element = {<NotFound />} />
+          <Route path='/500' element = {<InternalServerError />} />
         </Routes>
       </BrowserRouter>
     </div>
