@@ -1,0 +1,112 @@
+:root {
+  --main-color: #143d63;  /* Main color for text and accents */
+  --sec-color: #b8905b;   /* Secondary color for highlights */
+  --dark-color: #141526;  /* Dark background color */
+  --bg-color: #f2f8fb;    /* Background color */
+  --blacker-color: #010102;
+}
+
+/* Global styling for all elements */
+* {
+  box-sizing: border-box;
+  font-family: "Baloo Bhaijaan 2", sans-serif;
+}
+
+/* Styling for anchor (link) elements */
+a {
+  text-decoration: none;
+  font-family: "Baloo Bhaijaan 2", sans-serif;
+  color: var(--bg-color);
+  transition: all 0.3s linear;
+}
+
+/* Hover state for anchor elements */
+a:hover {
+  text-decoration: none;
+  color: var(--sec-color);
+  transition: all 0.3s linear;
+}
+
+/* Focus state for anchor elements */
+a:focus {
+  text-decoration: none;
+  /* color: inherit; */
+}
+
+/* Styling for buttons and their hover state */
+button,
+button:hover {
+  transition: all 0.3s linear;
+}
+
+/* Global styling for the body of the document */
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Baloo Bhaijaan 2", sans-serif;
+  background: var(--blacker-color);
+  text-align: start;
+  direction: rtl;  /* Right-to-left text direction for languages like Arabic */
+}
+
+/* Styling for section and footer elements */
+section,
+footer {
+  position: relative;
+}
+
+/* Styling for paragraphs */
+p {
+  margin: 0;
+  color: var(--sec-color);  /* You might consider using a variable here as well */
+  font-size: 15px;
+  line-height: 25px;
+}
+
+/* Styling for unordered lists */
+ul {
+  padding: 0;
+  margin: 0;
+  display: block;
+  transition: all 0.3s linear;
+}
+
+/* Styling for list items */
+li {
+  display: block;
+  list-style: none;
+  transition: all 0.3s linear;
+}
+
+/* Responsive styling for iframes */
+iframe {
+  width: 100%;
+  height: 100%;
+}
+
+/* Remove outline on various interactive elements */
+input,
+button,
+input:focus,
+button:focus,
+input:active,
+button:active,
+button:hover,
+textarea:active,
+textarea:focus,
+select,
+select:active,
+select:focus {
+    outline: none !important;
+}
+
+/* Disable resizing of textareas */
+textarea {
+    resize: none;
+}
+
+/* Styling for the main content area */
+main {
+    overflow: hidden;
+    /* min-height: 100vh; */
+}

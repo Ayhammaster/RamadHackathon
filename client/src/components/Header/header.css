@@ -1,0 +1,134 @@
+/* Common styles for all screens */
+.logodiv {
+  display: flex;
+  align-items: center;
+  background-color: var(--sec-color);
+  margin: 0;
+}
+
+.logo {
+  width: 10rem;
+  height: auto;
+  margin-right: 20px;
+  margin: auto;
+  cursor: pointer;
+}
+
+.hero {
+  margin: 0;
+  background-color: var(--sec-color);
+  text-align: center;
+}
+
+.hero h1 {
+  margin: 0;
+  font-size: 2.5em;
+  color: var(--main-color);
+  margin-bottom: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.hero p {
+  font-size: 1.2em;
+  line-height: 1.6;
+  color: var(--main-color);
+  padding-bottom: 15px;
+}
+
+/* Styles for all screens */
+.navbar {
+  background-color: transparent;
+  padding: 10px;
+  padding-top: 40px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  margin-top: -15px;
+  position: relative;
+  z-index: 1000;
+  color: var(--sec-color);
+  width: 100%;
+}
+
+.nav-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.nav-item {
+  margin-right: 20px;
+  color: var(--sec-color);
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--sec-color);
+  font-family: "Baloo Bhaijaan 2", sans-serif;
+  font-size: 28px;
+  font-weight: 1000;
+  line-height: 1.5;
+  letter-spacing: 1px;
+  transition: color 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+  color: var(--bg-color);
+  border-bottom: 3px solid var(--dark-color);
+}
+
+#contactsNav {
+  background-color: var(--dark-color);
+  padding: 2px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 35px;
+}
+
+#contactsNav:hover {
+  color: var(--bg--color);
+  background-color: var(--sec-color);
+}
+
+.vlogoDiv{
+  width: 100%;
+  display: flex;
+  justify-content: start;
+}
+
+.vidLogo{
+  width: 10rem;
+}
+
+
+/* Mobile responsiveness */
+@media only screen and (max-width: 768px) {
+  .navbar {
+    background-color: black;
+    position: inherit;
+    padding: 10px;
+    padding-top: 40px;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    color: var(--sec-color);
+    width: 100%;
+    height: 100%;
+ 
+  } 
+  .nav-list {
+    flex-direction: column;
+  } 
+  #vlogoDiv{
+    margin: auto;
+  }
+  .vidLogo{
+    max-width: 15rem;
+    margin: auto;
+  }
+}
