@@ -43,7 +43,7 @@
 .submitButton {
   padding: 10px 20px;
   background-color: var(--main-color);
-  color: white;
+  color: var(--sec-color);
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -53,6 +53,7 @@
 
 .submitButton:hover {
   background-color: var(--sec-color);
+  color: white;
 }
 
 .response {

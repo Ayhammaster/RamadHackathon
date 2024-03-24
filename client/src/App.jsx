@@ -3,10 +3,13 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom';
 
 import Header  from './components/Header/header';
 import HeroSection from './components/Hero/hero';
-import FormComponent from './components/Form/ocrForm'
-import AboutUs from './components/About/about'
-import Contact from './components/Contact/contact'
+import FormComponent from './components/Form/ocrForm';
+import AboutUs from './components/About/about';
+import Contact from './components/Contact/contact';
 import Footer from './components/Footer/footer';
+
+import Signup from './components/Authentication/SignUp/signup';
+import Login from './components/Authentication/Login/login';
 
 import NotFound from './components/Errors/404-NotFound/NotFound';
 import InternalServerError from './components/Errors/500-InternalError/InternalServerError';
@@ -46,6 +49,24 @@ function App() {
               <>
                 <Header />
                 <Contact />
+                <Footer />
+              </>
+          } />
+          <Route 
+            path='/signup' 
+            element= {
+              <>
+                <Header />
+                <Signup />
+                <Footer />
+              </>
+          } />
+          <Route 
+            path='/login' 
+            element= {
+              <>
+                <Header />
+                <Login />
                 <Footer />
               </>
           } />
