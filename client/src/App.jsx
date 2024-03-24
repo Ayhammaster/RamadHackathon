@@ -9,6 +9,10 @@ import Contact from './components/Contact/contact'
 import Footer from './components/Footer/footer';
 import NotFound from './components/NotFound/NotFound'
 
+import PrivacyPolicy from './components/Copyrighting/PrivacyPolicy/privacyPolicy';
+import TermsAndConditions from './components/Copyrighting/TermsAndConditions/termsAndConditions';
+import IntellectualProperty from './components/Copyrighting/IntellectualProperty/intellectualProperty';
+
 function App() {
 
   return (
@@ -43,6 +47,35 @@ function App() {
                 <Footer />
               </>
           } />
+          <Route 
+            path='/privacy-policy' 
+            element= {
+              <>
+                <Header />
+                <PrivacyPolicy />
+                <Footer />
+              </>
+          } />
+          <Route
+            path='/terms-and-conditions'
+            element={
+              <>  
+                <Header />
+                <TermsAndConditions />
+                <Footer />
+              </>
+            }
+          />
+          <Route
+            path='/intellectual-property'
+            element={
+              <>  
+                <Header />
+                <IntellectualProperty />
+                <Footer />
+              </>
+            }
+          />
           <Route path='*' element = {<NotFound />} />
         </Routes>
       </BrowserRouter>
