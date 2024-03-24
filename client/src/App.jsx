@@ -5,6 +5,7 @@ import Header  from './components/Header/header';
 import HeroSection from './components/Hero/hero';
 import FormComponent from './components/Form/ocrForm'
 import Footer from './components/Footer/footer';
+import NotFound from './components/NotFound/NotFound'
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
                 <Footer />
               </>
           } />
+          <Route path='*' element = {<NotFound />} />
         </Routes>
       </BrowserRouter>
     </div>

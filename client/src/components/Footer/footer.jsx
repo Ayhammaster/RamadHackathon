@@ -23,13 +23,13 @@ const Footer = () => {
             <div className="footer-content" id='followUs'>
                 <h3>تواصل معنا</h3>
                 <div id='iconsContainer'>
-                  <a href="https://www.linkedin.com/company/diyarah-real-estate-company/" target='_blank'>
+                  <a href="https://www.linkedin.com/in/ayham-ahmad-2787bb1b3/" target='_blank'>
                     <img src={LinkedinLogo} alt="Linkedin Icon" loading="lazy" />
                   </a>
-                  <a href="https://www.linkedin.com/company/diyarah-real-estate-company/" target='_blank'>
+                  <a href="https://www.linkedin.com/in/abdullasadoun/" target='_blank'>
                     <img src={LinkedinLogo} alt="Linkedin Icon" loading="lazy" />
                   </a>
-                  <a href="https://www.linkedin.com/company/diyarah-real-estate-company/" target='_blank'>
+                  <a href="https://www.linkedin.com/in/ibrahim-abu-eita-0b2490206/" target='_blank'>
                     <img src={LinkedinLogo} alt="Linkedin Icon" loading="lazy" />
                   </a>
                 </div>
@@ -38,7 +38,17 @@ const Footer = () => {
         <br /> <br /> <br /> <br /> <br /> <br />
         <p className="copyright">© 2024 . كل الحقوق محفوظة لترجمان.</p>
         <br />
-        <p id='hema'>Made by Suhur Squad: <a href="https://www.linkedin.com/in/ibrahim-abu-eita-0b2490206/" target='_blank'>Ayham Ahmed (Mr. Code)</a> & <a href="http://www.linkedin.com/in/salma-khaled-539847260" target="_blank"> Abdullah Sadoun</a> & <a href="http://www.linkedin.com/in/salma-khaled-539847260" target="_blank"> Ibrahim Abu Eita</a></p>
+        <p id='hema'> Made by Suhur Squad: 
+          <a href="https://www.linkedin.com/in/ayham-ahmad-2787bb1b3/" target='_blank'>
+            Ayham Ahmed (Mr. Code)
+          </a> & 
+          <a href="https://www.linkedin.com/in/abdullasadoun/" target="_blank"> 
+            Abdullah Sadoun
+          </a> & 
+          <a href="https://www.linkedin.com/in/ibrahim-abu-eita-0b2490206/" target="_blank"> 
+            Ibrahim Abu Eita
+          </a>
+        </p>
     </footer>
   );
 }

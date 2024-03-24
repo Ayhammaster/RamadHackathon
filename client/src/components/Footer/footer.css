@@ -1,6 +1,6 @@
 footer {
-    background-color: var(--blacker-color); /* Dark background color */
-    color: var(--sec-color); /* Background color for text */
+    background-color: var(--blacker-color); 
+    color: var(--sec-color); 
     padding: 20px 0;
     padding-top: 50px;
 }
@@ -17,7 +17,7 @@ footer {
 }
 
 h3 {
-    color: var(--sec-color); /* Background color for text */
+    color: var(--sec-color); 
 }
 
 p {

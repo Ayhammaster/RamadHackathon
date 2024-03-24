@@ -1,8 +1,8 @@
 :root {
-  --main-color: #143d63;  /* Main color for text and accents */
-  --sec-color: #b8905b;   /* Secondary color for highlights */
-  --dark-color: #141526;  /* Dark background color */
-  --bg-color: #f2f8fb;    /* Background color */
+  --main-color: #143d63;
+  --sec-color: #b8905b;   
+  --dark-color: #141526;  
+  --bg-color: #f2f8fb;    
   --blacker-color: #010102;
 }
 
@@ -30,7 +30,6 @@ a:hover {
 /* Focus state for anchor elements */
 a:focus {
   text-decoration: none;
-  /* color: inherit; */
 }
 
 /* Styling for buttons and their hover state */
@@ -46,7 +45,7 @@ body {
   font-family: "Baloo Bhaijaan 2", sans-serif;
   background: var(--blacker-color);
   text-align: start;
-  direction: rtl;  /* Right-to-left text direction for languages like Arabic */
+  direction: rtl;
 }
 
 /* Styling for section and footer elements */
@@ -58,7 +57,7 @@ footer {
 /* Styling for paragraphs */
 p {
   margin: 0;
-  color: var(--sec-color);  /* You might consider using a variable here as well */
+  color: var(--sec-color); 
   font-size: 15px;
   line-height: 25px;
 }
@@ -108,5 +107,4 @@ textarea {
 /* Styling for the main content area */
 main {
     overflow: hidden;
-    /* min-height: 100vh; */
 }
