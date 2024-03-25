@@ -1,8 +1,13 @@
+import logging
+import os
 from fastapi import FastAPI, HTTPException
 from fastapi.responses import JSONResponse
 from sqlalchemy.exc import SQLAlchemyError
 from .routes.OCR import ocr
 from .routes.authentication import auth
+
+# Configure logging
+logging.basicConfig(level=logging.DEBUG)  # Set logging level to DEBUG
 
 app = FastAPI()
 
@@ -17,3 +22,7 @@ async def global_error_handler(request, exc):
 
 app.include_router(auth.router)
 app.include_router(ocr.router)
+
+# Add logging statements
+logging.debug("Starting application...")
+logging.debug("Current working directory: %s", os.getcwd())
