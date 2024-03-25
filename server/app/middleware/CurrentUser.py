@@ -1,9 +1,9 @@
 from fastapi import HTTPException, Depends
 from fastapi.security import HTTPBasic, HTTPBasicCredentials
 from sqlalchemy.orm import Session
-from app.models import User
-from app.routes.authentication.auth import pwd_context
-from app.database.connection import get_db
+from ..models import User
+from ..routes.authentication.auth import pwd_context
+from ..database.connection import get_db
 
 security = HTTPBasic()
 class CurrentUser:

@@ -1,11 +1,9 @@
 from fastapi import FastAPI, HTTPException
 from fastapi.responses import JSONResponse
 from sqlalchemy.exc import SQLAlchemyError
-from .routes.OCR import ocr
-from .routes.authentication import auth
 
 app = FastAPI()
-
+# Global error handler
 @app.exception_handler(Exception)
 async def global_error_handler(request, exc):
     if isinstance(exc, HTTPException):
@@ -14,6 +12,3 @@ async def global_error_handler(request, exc):
         return JSONResponse(content={"detail": "Database error occurred"}, status_code=500)
     else:
         return JSONResponse(content={"detail": "Internal server error"}, status_code=500)
-
-app.include_router(auth.router)
-app.include_router(ocr.router)
