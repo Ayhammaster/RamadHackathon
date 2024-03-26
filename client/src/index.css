@@ -4,6 +4,7 @@
   --dark-color: #141526;  
   --bg-color: #f2f8fb;    
   --blacker-color: #010102;
+  --dur: 0.3s;
 }
 
 /* Global styling for all elements */
@@ -18,6 +19,13 @@ a {
   font-family: "Baloo Bhaijaan 2", sans-serif;
   color: var(--bg-color);
   transition: all 0.3s linear;
+}
+
+.lightmoderoot{
+  --blacker-color: #ffffff;
+  --main-color: #143d63;
+  --dark-color: #e1e1e1;  
+  --bg-color: #000000;
 }
 
 /* Hover state for anchor elements */

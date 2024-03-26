@@ -7,6 +7,7 @@ import FormComponent from './components/Form/ocrForm';
 import AboutUs from './components/About/about';
 import Contact from './components/Contact/contact';
 import Footer from './components/Footer/footer';
+import Up from './components/Up/up';
 
 import Signup from './components/Authentication/SignUp/signup';
 import Login from './components/Authentication/Login/login';
@@ -102,6 +103,7 @@ function App() {
           <Route path='*' element = {<NotFound />} />
           <Route path='/500' element = {<InternalServerError />} />
         </Routes>
+        <Up />
       </BrowserRouter>
     </div>
   );
