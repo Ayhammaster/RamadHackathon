@@ -31,14 +31,14 @@ const Header = () => {
         <input 
           onChange={handleDarkModeToggle}  
           id="dark-mode" 
-          class="toggle" 
+          className="toggle" 
           type="checkbox" 
           name="Dark mode" 
           role="switch" 
           value="on"
         />
-        <label for="dark-mode" class="sr">Dark Mode</label>
-        <div class="curtain"></div>
+        <label for="dark-mode" className="sr">Dark Mode</label>
+        <div className="curtain"></div>
       </form>
         <ul className="nav-list">
           <li className="nav-item"><a href="/" className="nav-link">الصفحة الرئيسية</a></li>
