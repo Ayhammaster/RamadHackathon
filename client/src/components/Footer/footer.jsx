@@ -40,7 +40,7 @@ const Footer = () => {
         <br />
         <p id='hema'> Made by Suhur Squad: 
           <a href="https://www.linkedin.com/in/ayham-ahmad-2787bb1b3/" target='_blank'>
-            Ayham Ahmed (Mr. Code)
+            Ayham Ahmed (Dr. Code)
           </a> & 
           <a href="https://www.linkedin.com/in/abdullasadoun/" target="_blank"> 
             Abdullah Sadoun

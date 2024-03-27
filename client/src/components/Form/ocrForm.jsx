@@ -21,7 +21,7 @@ const ImageForm = () => {
     formData.append('summarize', summarize);
 
     try {
-      const response = await fetch('your-endpoint-url', {
+      const response = await fetch('http://127.0.0.1:5000', {
         method: 'POST',
         body: formData
       });
@@ -52,7 +52,8 @@ const ImageForm = () => {
       </form>
       {response && (
         <div className="response">
-          <p>{JSON.stringify(response)}</p>
+          <div>    <p>{JSON.stringify(response)}</p> </div>
+          <div>    <p>{JSON.stringify(response)}</p> </div>
         </div>
       )}
     </div>
