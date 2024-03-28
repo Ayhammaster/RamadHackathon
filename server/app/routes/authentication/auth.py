@@ -5,6 +5,7 @@ from ...models import User, Base
 from ...database.connection import engine, get_db
 from ...validation.LoginValidation import LoginRequest
 from ...validation.SignUpValidation import SignupRequest
+from ...validation.ResetPasswordValidation import ResetPasswordRequest
 from ...middleware.uuidGenerator import generate_uuid, generate_uuidUser
 import logging
 
@@ -73,6 +74,33 @@ def login(request: LoginRequest, db: Session = Depends(get_db)):
         raise e  # Re-raise specific HTTP exceptions
     except Exception as e:
         logger.error(f"Error occurred during user login: {e}")
+        raise HTTPException(status_code=500, detail="Internal server error")
+
+
+@router.post("/reset-password")
+def reset_password(request: ResetPasswordRequest, db: Session = Depends(get_db)):
+    try:
+        email = request.email.strip()
+
+        # Check if the user exists
+        user = db.query(User).filter(User.email == email).first()
+        if not user:
+            raise HTTPException(status_code=404, detail="User not found")
+
+        new_password = generate_uuid()  
+        hashed_password = pwd_context.hash(new_password)
+
+        # Update the user's password in the database
+        user.password_hash = hashed_password
+        db.commit()
+
+        logger.info(f"Password reset successfully for user '{email}'")
+        return {"message": "Password reset successfully", "new_password": new_password}
+
+    except HTTPException as e:
+        raise e  # Re-raise specific HTTP exceptions
+    except Exception as e:
+        logger.error(f"Error occurred during password reset: {e}")
         raise HTTPException(status_code=500, detail="Internal server error")
 
 
