@@ -18,6 +18,7 @@ const Footer = () => {
                 <p><a href="/terms-and-conditions" target='_blank'>الشروط و الأحكام </a></p> <br />
                 <p><a href="/intellectual-property" target="_blank">حقوق الملكية الفكرية </a></p> <br />
                 <p><a href="/privacy-policy" target="_blank">سياسات الخصوصية</a></p> <br />
+                <p><a href="/docs" target="_blank">وثائق النموذج للمطورين </a></p> <br />
             </div>
   
             <div className="footer-content" id='followUs'>

@@ -13,6 +13,8 @@ import Signup from './components/Authentication/SignUp/signup';
 import Login from './components/Authentication/Login/login';
 import ReseyPassword from './components/Authentication/reset/reset'
 
+import API_Documentation from './components/docs/Swagger'
+
 import NotFound from './components/Errors/404-NotFound/NotFound';
 import InternalServerError from './components/Errors/500-InternalError/InternalServerError';
 
@@ -83,6 +85,16 @@ function App() {
               <>  
                 <Header />
                 <ReseyPassword />
+                <Footer />
+              </>
+            }
+          />
+          <Route
+            path='/docs'
+            element={
+              <>  
+                <Header />
+                <API_Documentation />
                 <Footer />
               </>
             }

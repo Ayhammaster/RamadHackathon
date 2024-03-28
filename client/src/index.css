@@ -2,7 +2,7 @@
   --main-color: #143d63;
   --sec-color: #b8905b;   
   --dark-color: #141526;  
-  --bg-color: #f2f8fb;    
+  --bg-color: rgb(196, 206, 180);    
   --blacker-color: #010102;
   --dur: 0.3s;
 }
