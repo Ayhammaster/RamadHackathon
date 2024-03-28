@@ -8,10 +8,11 @@ from typing import List
 import easyocr
 from ArabicOcr import arabicocr
 from PIL import Image
-from fastapi import APIRouter, File, UploadFile, HTTPException
+from fastapi import APIRouter, File, UploadFile, HTTPException, Query
 from fastapi.responses import StreamingResponse
 from pydantic import BaseModel
 from starlette.responses import JSONResponse
+from ...middleware.tokenValidation import validate_token
 
 router = APIRouter()
 
@@ -21,9 +22,10 @@ class OCRResult(BaseModel):
     words: List[str]
     output_image: bytes
 
-@router.post("/ocr")
-async def ocr(file: UploadFile = File(...)):
+@router.post("/ocr/v1")
+async def ocr(file: UploadFile = File(...), user_token: str = Query(..., description="User token for validation")):
     try:
+        validate_token(user_token)
         extracted_text = None
         # Read the image file
         contents = await file.read()
@@ -40,9 +42,10 @@ async def ocr(file: UploadFile = File(...)):
         raise HTTPException(status_code=500, detail="Internal server error")
 
 
-@router.post("/ocr2")
-async def ocr_flow(file: UploadFile = File(...)):
+@router.post("/ocr/v2")
+async def ocr_flow(file: UploadFile = File(...), user_token: str = Query(..., description="User token for validation")):
     try:
+        validate_token(user_token)
         # Save the uploaded image temporarily
         with open('uploaded_image.jpg', 'wb') as buffer:
             buffer.write(await file.read())
@@ -87,9 +90,10 @@ async def ocr_flow(file: UploadFile = File(...)):
         raise HTTPException(status_code=500, detail="Internal server error")
 
 
-@router.post("/ocr3")
-async def ocr_img(file: UploadFile = File(...)):
+@router.post("/ocr/v3")
+async def ocr_img(file: UploadFile = File(...), user_token: str = Query(..., description="User token for validation")):
     try:
+        validate_token(user_token)
         # Save the uploaded image temporarily
         with open('uploaded_image.jpg', 'wb') as buffer:
             buffer.write(await file.read())

@@ -5,6 +5,7 @@ from ...models import User, Base
 from ...database.connection import engine, get_db
 from ...validation.LoginValidation import LoginRequest
 from ...validation.SignUpValidation import SignupRequest
+from ...middleware.uuidGenerator import generate_uuid, generate_uuidUser
 import logging
 
 # FastAPI app
@@ -22,21 +23,30 @@ logger = logging.getLogger(__name__)
 def signup(request: SignupRequest, db: Session = Depends(get_db)):
     try:
         username = request.username.strip()
+        email = request.email.strip()
 
         # Check for existing username
         existing_user = db.query(User).filter(User.username == username).first()
+        existing_email = db.query(User).filter(User.email == email).first()
         if existing_user:
             raise HTTPException(status_code=400, detail="Username already exists")
+        if existing_email:
+            raise HTTPException(status_code=400, detail="Email already exists")
+        
+        token = generate_uuid()
+        existing_token = db.query(User).filter(User.token == token).first()
+        if existing_token:
+            token = generate_uuidUser(username)
 
         password = request.password
         hashed_password = pwd_context.hash(password)
 
-        user = User(username=username, password_hash=hashed_password)
+        user = User(username=username, email=email, token=token, password_hash=hashed_password)
         db.add(user)
         db.commit()
 
         logger.info(f"User '{username}' signed up successfully")
-        return {"message": "User created successfully"}
+        return {"message": "User created successfully", "user": user.to_dict()}
 
     except HTTPException as e:
         raise e  # Re-raise specific HTTP exceptions
@@ -57,7 +67,7 @@ def login(request: LoginRequest, db: Session = Depends(get_db)):
             raise HTTPException(status_code=401, detail="Invalid username or password")
 
         logger.info(f"User '{username}' logged in successfully")
-        return {"message": "Login successful"}
+        return {"message": "Login successful", "user": user.to_dict()}
 
     except HTTPException as e:
         raise e  # Re-raise specific HTTP exceptions

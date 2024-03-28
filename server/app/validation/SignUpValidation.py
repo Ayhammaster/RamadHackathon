@@ -1,8 +1,9 @@
-from pydantic import BaseModel, Field, validator
+from pydantic import BaseModel, Field, validator, EmailStr
 import re
 
 class SignupRequest(BaseModel):
     username: str = Field(..., min_length=4, max_length=20)
+    email: EmailStr = Field(..., description="Valid email address")
     password: str = Field(..., min_length=8)
 
     @validator('username')
