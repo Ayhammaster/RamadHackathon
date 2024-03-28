@@ -1,5 +1,8 @@
 import React from 'react';
 import './about.css';
+import { FaLinkedin } from "react-icons/fa";
+import { FaGithubSquare } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
 
 import Ayham from '/Images/Team/ayham.jpeg'
 import Abdullah from '/Images/Team/abdullah.jpeg'
@@ -11,9 +14,9 @@ const TeamMember = ({ name, image, linkedin, email, github, linkedin_handle, git
       <img className="team-member-image" src={image} alt={name} />
       <div className="team-member-details">
         <h2>{name}</h2>
-        <p>Email: <a href={`mailto:${email}`}>{email}</a></p>
-        <p>LinkedIn: <a href={linkedin}>{linkedin_handle}</a></p>
-        <p>GitHub: <a href={github}>{githubHandle}</a></p>
+        <p><a href={`mailto:${email}`}>{email}</a> <MdEmail /></p>
+        <p><a href={linkedin}>{linkedin_handle}</a> <FaLinkedin /> </p>
+        <p><a href={github}>{githubHandle}</a> <FaGithubSquare /></p>
       </div>
     </div>
   );

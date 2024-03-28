@@ -19,10 +19,13 @@ import PrivacyPolicy from './components/Copyrighting/PrivacyPolicy/privacyPolicy
 import TermsAndConditions from './components/Copyrighting/TermsAndConditions/termsAndConditions';
 import IntellectualProperty from './components/Copyrighting/IntellectualProperty/intellectualProperty';
 
+import PopUp from './components/popup/popup'
+
 function App() {
 
   return (
     <div>  
+      <PopUp />
       <BrowserRouter>
         <Routes>
           <Route 
@@ -97,6 +100,15 @@ function App() {
                 <Header />
                 <IntellectualProperty />
                 <Footer />
+              </>
+            }
+          />
+          <Route
+            path='/pop'
+            element={
+              <>  
+                <Header />
+                <PopUp />
               </>
             }
           />

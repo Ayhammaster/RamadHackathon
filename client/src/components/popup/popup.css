@@ -1,0 +1,74 @@
+.custom-component {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 50%;
+    margin: auto;
+    background-color: var(--main-color);
+    z-index: 1000;
+}
+.hide{
+    display: none;
+}
+.custom-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+  
+.slider-button {
+    cursor: pointer;
+    color: var(--sec-color);
+    border: solid 1px var(--blacker-color);
+    background-color: var(--dark-color);
+    border-radius: 10px;
+    margin: auto;
+    width: 15rem;
+    font-size: 2em;
+    font-weight: bolder;
+    padding: auto;
+    text-align: center;
+    transform: ease-in-out 0.3s;
+}
+.slider-button:hover{
+    background-color: var(--sec-color);
+    color: var(--bg-color);
+}
+  
+.body-content {
+    padding: 0;
+    background-color: var(--dark-color);
+    border-radius: 10px;
+    height: 50%;
+}
+  
+.authentication-component{
+    margin: 0 auto;
+}
+
+#closeIcon{
+    cursor: pointer;
+    color: var(--sec-color);
+    margin: auto;
+    width: 100%;
+    font-size: 3em;
+    font-weight: bolder;
+    padding: auto;
+    text-align: center;
+    transform: ease-in-out 0.3s;
+}
+#closeIcon:hover{
+    color: var(--dark-color);
+}
+
+@media only screen and (max-width: 768px) {
+    .custom-component{
+        width: 90%;
+    }
+}

@@ -56,6 +56,10 @@ p {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
+.linkedinIconReact{
+    font-size: 2em;
+}
+
 @media screen and (max-width: 768px) {
     .footer-container {
         flex-direction: column;

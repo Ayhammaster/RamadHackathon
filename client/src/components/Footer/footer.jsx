@@ -1,7 +1,7 @@
 import React from 'react';
 import './footer.css'; 
 import Torjoman from '/Images/Icons/logoWithSlogan.png'
-import LinkedinLogo from '/Images/Social/linkedin.png'
+import { FaLinkedin } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -24,13 +24,13 @@ const Footer = () => {
                 <h3>تواصل معنا</h3>
                 <div id='iconsContainer'>
                   <a href="https://www.linkedin.com/in/ayham-ahmad-2787bb1b3/" target='_blank'>
-                    <img src={LinkedinLogo} alt="Linkedin Icon" loading="lazy" />
+                    <FaLinkedin className='linkedinIconReact' />
                   </a>
                   <a href="https://www.linkedin.com/in/abdullasadoun/" target='_blank'>
-                    <img src={LinkedinLogo} alt="Linkedin Icon" loading="lazy" />
+                    <FaLinkedin className='linkedinIconReact' />
                   </a>
                   <a href="https://www.linkedin.com/in/ibrahim-abu-eita-0b2490206/" target='_blank'>
-                    <img src={LinkedinLogo} alt="Linkedin Icon" loading="lazy" />
+                    <FaLinkedin className='linkedinIconReact' />
                   </a>
                 </div>
             </div>
