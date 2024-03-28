@@ -11,6 +11,7 @@ import Up from './components/Up/up';
 
 import Signup from './components/Authentication/SignUp/signup';
 import Login from './components/Authentication/Login/login';
+import ReseyPassword from './components/Authentication/reset/reset'
 
 import NotFound from './components/Errors/404-NotFound/NotFound';
 import InternalServerError from './components/Errors/500-InternalError/InternalServerError';
@@ -76,6 +77,16 @@ function App() {
                 <Footer />
               </>
           } />
+          <Route
+            path='/reset-password'
+            element={
+              <>  
+                <Header />
+                <ReseyPassword />
+                <Footer />
+              </>
+            }
+          />
           <Route 
             path='/privacy-policy' 
             element= {

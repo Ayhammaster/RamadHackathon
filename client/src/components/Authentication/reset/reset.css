@@ -1,0 +1,90 @@
+.reset-password-container {
+    width: 90%;
+    height: 70vh;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: var(--dark-color);
+    color: var(--sec-color);
+}
+  
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group input{
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid var(--sec-color);
+    border-radius: 5px;
+    outline: none;
+    box-shadow: 0 0 4px var(--sec-color);
+    color: var(--sec-color);
+    background-color: var(--main-color);
+    font-size: larger;
+}
+  
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+  
+.form-control {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid var(--sec-color);
+    border-radius: 5px;
+}
+  
+.btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: auto;
+}
+
+  
+.btn-primary {
+    background-color: var(--main-color);
+    color: var(--sec-color);
+    width: 6%;
+    margin-left: 47%;
+    margin-right: 47%;
+}
+
+.btn-primary:hover {
+    background-color: var(--sec-color);
+    color: var(--bg-color);
+}
+
+.success-message {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    border-radius: 5px;
+    color: #155724;
+    display: flex;
+}  
+#successXicon{
+    float: left;
+    font-size: 1.3em;
+}
+
+@media only screen and (max-width: 600px) {
+    .reset-password-container {
+        height: auto;
+        padding: 10px;
+    }
+
+    .btn-primary {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+}

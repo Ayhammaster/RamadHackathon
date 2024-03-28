@@ -54,6 +54,7 @@ const Login = () => {
           />
         </div>
         <button type="submit" className='login-button'>تسجيل الدخول</button>
+        <a href="/reset-password">هل نسيت كلمة المرور؟</a>
       </form>
     </div>
   );

@@ -27,7 +27,7 @@ const Header = () => {
   };
 
   const openPopup = () => {
-    document.getElementById('popUpWindow').classList.remove('hide');
+    document.getElementById('popUpWindow').classList.add('active');
   };
 
   return (

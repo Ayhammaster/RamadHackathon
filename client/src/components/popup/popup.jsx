@@ -14,7 +14,7 @@ const PopUp = () => {
   };
 
   const closePopup = () => {
-    document.getElementById('popUpWindow').classList.add('hide');
+    document.getElementById('popUpWindow').classList.remove('active');
   };
 
   return (
@@ -37,7 +37,9 @@ const PopUp = () => {
         )}
         
       </div>
-      <IoCloseSharp id='closeIcon' onClick={closePopup} />
+      <div id="closingIconDiv">
+        <IoCloseSharp id='closeIcon' onClick={closePopup} />
+      </div>
     </div>
   );
 };
