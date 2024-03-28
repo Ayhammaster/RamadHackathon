@@ -25,7 +25,9 @@ function App() {
 
   return (
     <div>  
+
       <PopUp />
+
       <BrowserRouter>
         <Routes>
           <Route 

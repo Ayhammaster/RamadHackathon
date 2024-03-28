@@ -51,7 +51,6 @@ const Header = () => {
           <div className="curtain"></div>
           <RiLoginBoxFill className="icon-large" onClick={openPopup} />
         </form>
-        
         <ul className="nav-list">
           <li className="nav-item"><a href="/" className="nav-link">الصفحة الرئيسية</a></li>
           <li className="nav-item"><a href="/about-us" className="nav-link">من نحن</a></li>

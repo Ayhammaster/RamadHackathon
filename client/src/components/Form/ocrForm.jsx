@@ -1,10 +1,13 @@
 import React, { useState } from 'react';
 import './ocrForm.css';
-
+import Loader from './loading';
 const ImageForm = () => {
   const [selectedFile, setSelectedFile] = useState(null);
   const [summarize, setSummarize] = useState(false);
   const [response, setResponse] = useState(null);
+  const [imageData, setImageData] = useState('');
+  const [loading, setLoading] = useState(false); 
+
 
   const handleFileChange = (e) => {
     setSelectedFile(e.target.files[0]);
@@ -17,23 +20,29 @@ const ImageForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const formData = new FormData();
-    formData.append('image', selectedFile);
+    formData.append('file', selectedFile);
     formData.append('summarize', summarize);
 
     try {
-      const response = await fetch('your-endpoint-url', {
+      setLoading(true); // Set loading to true when submitting the form
+
+      const response = await fetch('http://127.0.0.1:8000/ocr3', {
         method: 'POST',
         body: formData
       });
 
       if (response.ok) {
         const data = await response.json();
-        setResponse(data);
+        const words = data.words;
+        setResponse(words);
+        setImageData(data.image);
       } else {
         console.error('Failed to fetch');
       }
     } catch (error) {
       console.error('Error:', error);
+    } finally {
+      setLoading(false); // Set loading to false after receiving the response or encountering an error
     }
   };
 
@@ -50,11 +59,24 @@ const ImageForm = () => {
           <button type="submit" className="submitButton">استخرج</button>
         </div>
       </form>
+      {loading &&   <Loader />   }
       {response && (
         <div className="response">
-          <p>{JSON.stringify(response)}</p>
+     
+          <div className="responseimg">
+          <img src={`data:image/jpeg;base64,${imageData}`} alt="Uploaded Image" />
+             </div>
+
+             <div className="txt" >    
+                {response.map((word, index) => (
+        <div key={index}>{word}</div>
+               ))}
+           </div>
+        
         </div>
-      )}
+           )}
+
+
     </div>
   );
 };
