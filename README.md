@@ -6,9 +6,12 @@ This is a FastAPI application designed to provide endpoints for user signup, log
 
 To install and run this application, follow these steps:
 
-Sure, here are the steps for installation and starting your FastAPI application using a Python script named `run.py`:
-
-1. **Clone Repository**: If you haven't already, clone your repository containing the FastAPI application to your local machine navigate to `server/` in your terminal.
+1. **Clone Repository**: If you haven't already, clone your repository containing the FastAPI application in the server branch to your local machine 
+```bash
+    git clone https://github.com/Ayhammaster/RamadHackathon.git
+    git branch --track origin server
+```
+then, navigate to `server/` in your terminal.
 
 2. **Install Dependencies**: Make sure you have Python installed on your system. Then, install the required dependencies listed in the `requirements.txt` file. You can install them using the following command in your terminal:
 
