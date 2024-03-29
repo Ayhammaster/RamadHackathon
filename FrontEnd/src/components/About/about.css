@@ -1,0 +1,37 @@
+.team {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+  
+.team-member {
+    background-color: var(--dark-color);
+    border-radius: 10px;
+    margin: 20px;
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+}
+.team-member-image {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 20px;
+    display: block;
+}
+
+.team-member-details h2 {
+    color: var(--sec-color);
+}
+
+.team-member-details p {
+    color: var(--sec-color);
+    margin: 10px 0;
+    text-align: end;
+}
+
+@media only screen and (max-width: 600px) {
+    .team-member {
+        width: 80%;
+    }
+}

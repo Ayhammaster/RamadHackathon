@@ -1,0 +1,145 @@
+:root {
+  --main-color: #143d63;
+  --sec-color: #b8905b;   
+  --dark-color: #141526;  
+  --bg-color: rgb(196, 206, 180);    
+  --blacker-color: #010102;
+  --dur: 0.3s;
+}
+
+/* Global styling for all elements */
+* {
+  box-sizing: border-box;
+  font-family: "Baloo Bhaijaan 2", sans-serif;
+}
+
+/* Styling for anchor (link) elements */
+a {
+  text-decoration: none;
+  font-family: "Baloo Bhaijaan 2", sans-serif;
+  color: var(--bg-color);
+  transition: all 0.3s linear;
+}
+
+.lightmoderoot{
+  --blacker-color: #ffffff;
+  --main-color: #143d63;
+  --dark-color: #e1e1e1;  
+  --bg-color: #000000;
+}
+
+/* Hover state for anchor elements */
+a:hover {
+  text-decoration: none;
+  color: var(--sec-color);
+  transition: all 0.3s linear;
+}
+
+/* Focus state for anchor elements */
+a:focus {
+  text-decoration: none;
+}
+
+/* Styling for buttons and their hover state */
+button,
+button:hover {
+  transition: all 0.3s linear;
+}
+
+/* Global styling for the body of the document */
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Baloo Bhaijaan 2", sans-serif;
+  background: var(--blacker-color);
+  text-align: start;
+  direction: rtl;
+}
+
+/* Styling for section and footer elements */
+section,
+footer {
+  position: relative;
+}
+
+/* Styling for paragraphs */
+p {
+  margin: 0;
+  color: var(--sec-color); 
+  font-size: 15px;
+  line-height: 25px;
+}
+
+/* Styling for unordered lists */
+ul {
+  padding: 0;
+  margin: 0;
+  display: block;
+  transition: all 0.3s linear;
+}
+
+/* Styling for list items */
+li {
+  display: block;
+  list-style: none;
+  transition: all 0.3s linear;
+}
+
+/* Responsive styling for iframes */
+iframe {
+  width: 100%;
+  height: 100%;
+}
+
+/* Remove outline on various interactive elements */
+input,
+button,
+input:focus,
+button:focus,
+input:active,
+button:active,
+button:hover,
+textarea:active,
+textarea:focus,
+select,
+select:active,
+select:focus {
+    outline: none !important;
+}
+
+/* Disable resizing of textareas */
+textarea {
+    resize: none;
+}
+
+/* Styling for the main content area */
+main {
+    overflow: hidden;
+}
+
+/* Styles for the popup */
+.popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+/* Styles for the overlay */
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 900;
+}

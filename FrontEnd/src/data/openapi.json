@@ -1,0 +1,248 @@
+{
+    "openapi": "3.1.0",
+    "info": {
+        "title": "Torjoman Model API Documentation",
+        "version": "0.1.0"
+    },
+    "paths": {
+        "/ocr/v1": {
+            "post": {
+                "summary": "Ocr",
+                "operationId": "ocr_ocr_v1_post",
+                "parameters": [
+                    {
+                        "name": "user_token",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "description": "User token for validation",
+                            "title": "User Token"
+                        },
+                        "description": "User token for validation"
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Body_ocr_ocr_v1_post"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/ocr/v2": {
+            "post": {
+                "summary": "Ocr Flow",
+                "operationId": "ocr_flow_ocr_v2_post",
+                "parameters": [
+                    {
+                        "name": "user_token",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "description": "User token for validation",
+                            "title": "User Token"
+                        },
+                        "description": "User token for validation"
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Body_ocr_flow_ocr_v2_post"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/ocr/v3": {
+            "post": {
+                "summary": "Ocr Img",
+                "operationId": "ocr_img_ocr_v3_post",
+                "parameters": [
+                    {
+                        "name": "user_token",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "description": "User token for validation",
+                            "title": "User Token"
+                        },
+                        "description": "User token for validation"
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Body_ocr_img_ocr_v3_post"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Successful Response",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation Error",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/HTTPValidationError"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Body_ocr_flow_ocr_v2_post": {
+                "properties": {
+                    "file": {
+                        "type": "string",
+                        "format": "binary",
+                        "title": "File"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "file"
+                ],
+                "title": "Body_ocr_flow_ocr_v2_post"
+            },
+            "Body_ocr_img_ocr_v3_post": {
+                "properties": {
+                    "file": {
+                        "type": "string",
+                        "format": "binary",
+                        "title": "File"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "file"
+                ],
+                "title": "Body_ocr_img_ocr_v3_post"
+            },
+            "Body_ocr_ocr_v1_post": {
+                "properties": {
+                    "file": {
+                        "type": "string",
+                        "format": "binary",
+                        "title": "File"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "file"
+                ],
+                "title": "Body_ocr_ocr_v1_post"
+            },
+            "HTTPValidationError": {
+                "properties": {
+                    "detail": {
+                        "items": {
+                            "$ref": "#/components/schemas/ValidationError"
+                        },
+                        "type": "array",
+                        "title": "Detail"
+                    }
+                },
+                "type": "object",
+                "title": "HTTPValidationError"
+            },
+            "ValidationError": {
+                "properties": {
+                    "loc": {
+                        "items": {
+                            "anyOf": [
+                                {
+                                    "type": "string"
+                                },
+                                {
+                                    "type": "integer"
+                                }
+                            ]
+                        },
+                        "type": "array",
+                        "title": "Location"
+                    },
+                    "msg": {
+                        "type": "string",
+                        "title": "Message"
+                    },
+                    "type": {
+                        "type": "string",
+                        "title": "Error Type"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "loc",
+                    "msg",
+                    "type"
+                ],
+                "title": "ValidationError"
+            }
+        }
+    }
+}
