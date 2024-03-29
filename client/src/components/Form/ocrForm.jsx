@@ -26,7 +26,7 @@ const ImageForm = () => {
     try {
       setLoading(true); // Set loading to true when submitting the form
 
-      const response = await fetch('https://ramadhackathon-1.onrender.com/ocr/v3', {
+      const response = await fetch('http://127.0.0.1:8000/ocr/v3', {
         method: 'POST',
         body: formData
       });

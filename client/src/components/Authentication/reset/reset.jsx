@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './reset.css';
 import { IoCloseSharp } from "react-icons/io5";
+import { ResetPasswordRoute } from '../../../API/auth/reset'
 
 const ResetPassword = () => {
   const [email, setEmail] = useState('');
@@ -12,9 +13,11 @@ const ResetPassword = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(`Password reset requested for email: ${email}`);
-    setMessage('تم ارسال رسال تغيير كلمة المرور على بريدك الالكتروني.');
-    setEmail('');
+    let flag = ResetPasswordRoute(email);
+    if (flag){
+      setMessage('تم ارسال رسال تغيير كلمة المرور على بريدك الالكتروني.');
+      setEmail('');
+    }
   };
 
   const closePopup = () => {
@@ -30,7 +33,13 @@ const ResetPassword = () => {
                 <IoCloseSharp id='successXicon' onClick={closePopup} />
                 {message}
             </p>
-        </div> 
+        </div> || 
+        <div id='successDiv'>
+          <p className="success-message">
+              <IoCloseSharp id='successXicon' onClick={closePopup} />
+              حدث خطأ في تغيير كلمة المرور.
+          </p>
+        </div>
       }
       <form onSubmit={handleSubmit}>
         <div className="form-group">
