@@ -25,7 +25,7 @@ class OCRResult(BaseModel):
 @router.post("/ocr/v1")
 async def ocr(file: UploadFile = File(...), user_token: str = Query(..., description="User token for validation")):
     try:
-        validate_token(user_token)
+        await validate_token(user_token)
         extracted_text = None
         # Read the image file
         contents = await file.read()
@@ -45,7 +45,7 @@ async def ocr(file: UploadFile = File(...), user_token: str = Query(..., descrip
 @router.post("/ocr/v2")
 async def ocr_flow(file: UploadFile = File(...), user_token: str = Query(..., description="User token for validation")):
     try:
-        validate_token(user_token)
+        await validate_token(user_token)
         # Save the uploaded image temporarily
         with open('uploaded_image.jpg', 'wb') as buffer:
             buffer.write(await file.read())
@@ -93,7 +93,7 @@ async def ocr_flow(file: UploadFile = File(...), user_token: str = Query(..., de
 @router.post("/ocr/v3")
 async def ocr_img(file: UploadFile = File(...), user_token: str = Query(..., description="User token for validation")):
     try:
-        validate_token(user_token)
+        await validate_token(user_token)
         # Save the uploaded image temporarily
         with open('uploaded_image.jpg', 'wb') as buffer:
             buffer.write(await file.read())
