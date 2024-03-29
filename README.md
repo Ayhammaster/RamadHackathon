@@ -16,9 +16,8 @@ Sure, here are the steps for installation and starting your FastAPI application 
     pip install -r requirements.txt
     ```
 
-4. **Run `run.py` Script**: in the ./server 
-
-6. **Start the Application**: Open your terminal, navigate to the root directory of your FastAPI application, then run the command `cd server/`, and run the following command:
+3. **Run `run.py` Script**: in the ./server 
+ Open your terminal, navigate to the root directory of your FastAPI application, then run the command `cd server/`, and run the following command:
 
     ```
     python run.py
@@ -26,7 +25,9 @@ Sure, here are the steps for installation and starting your FastAPI application 
 
     This command will execute the `run.py` script, which in turn will start your FastAPI application using `uvicorn` with auto-reload enabled.
 
-7. **Access the Application**: Once the application is running, you can access it by navigating to `http://127.0.0.1/:8000` in your web browser. You should see the FastAPI documentation page where you can explore and test the available endpoints.
+    You might need to remover the host inside the `uvicorn` function in `run.py`, it's there for deployment issues.
+
+4. **Access the Application**: Once the application is running, you can access it by navigating to `http://127.0.0.1/:8000` in your web browser. You should see the FastAPI documentation page where you can explore and test the available endpoints.
 
 That's it! Your FastAPI application should now be installed and running using the `python run.py` command.
 
