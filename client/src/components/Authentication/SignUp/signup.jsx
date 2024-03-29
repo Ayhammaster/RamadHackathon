@@ -19,7 +19,7 @@ const Signup = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('https://your-api-endpoint.com/signup', {
+      const response = await fetch('https://ramadhackathon-1.onrender.com/signup', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

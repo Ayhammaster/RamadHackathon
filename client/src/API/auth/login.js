@@ -13,6 +13,7 @@ async function LoginHandler(loginData) {
         throw new Error('Invalid username or password');
       }
       const data = await response.json();
+      console.log(data);
       return data;
     } catch (error) {
       console.error('Error logging in:', error);

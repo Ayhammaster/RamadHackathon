@@ -4,7 +4,7 @@ import { LoginHandler } from '../../../API/auth/login';
 
 const Login = () => {
   const [formData, setFormData] = useState({
-    email: '',
+    username: '',
     password: ''
   });
 
@@ -33,11 +33,11 @@ const Login = () => {
       <form onSubmit={handleSubmit} className='login-form'>
         <h2>تسجيل الدخول لترجمان</h2>
         <div className='login-input'>
-          <label htmlFor="email">البريد الالكتروني:</label>
+          <label htmlFor="username">اسم المستخدم:</label>
           <input
-            type="email"
-            id="email"
-            name="email"
+            type="text"
+            id="username"
+            name="username"
             value={formData.email}
             onChange={handleChange}
             required
