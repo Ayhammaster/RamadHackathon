@@ -93,7 +93,7 @@ async def ocr_flow(file: UploadFile = File(...), user_token: str = Query(..., de
 @router.post("/ocr/v3")
 async def ocr_img(file: UploadFile = File(...), user_token: str = Query(..., description="User token for validation")):
     try:
-        await validate_token(user_token)
+        # await validate_token(user_token)
         # Save the uploaded image temporarily
         with open('uploaded_image.jpg', 'wb') as buffer:
             buffer.write(await file.read())
@@ -130,7 +130,7 @@ async def ocr_img(file: UploadFile = File(...), user_token: str = Query(..., des
         # Prepare the response
         response_data = {
             "words": words,
-            "image": base64.b64encode(output_image).decode('utf-8')  # Convert image to base64
+            "image": base64.b64encode(output_image).decode('utf-8')
         }
 
         return JSONResponse(content=response_data)
