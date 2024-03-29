@@ -91,7 +91,7 @@ async def ocr_flow(file: UploadFile = File(...), user_token: str = Query(..., de
 
 
 @router.post("/ocr/v3")
-async def ocr_img(file: UploadFile = File(...), user_token: str = Query(..., description="User token for validation")):
+async def ocr_img(file: UploadFile = File(...)):
     try:
         # await validate_token(user_token)
         # Save the uploaded image temporarily
