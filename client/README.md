@@ -1,6 +1,4 @@
-Sure, let's make the documentation more comprehensive.
-
-### Torjoman Client Side Documentation
+# Torjoman Client Side Documentation
 
 #### Installation
 
