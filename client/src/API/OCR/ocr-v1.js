@@ -1,5 +1,5 @@
 async function performOCR(formData, userToken) {
-    const url = `/ocr/v3?user_token=${encodeURIComponent(userToken)}`;
+    const url = `https://ramadhackathon-1.onrender.com/ocr/v3?user_token=${encodeURIComponent(userToken)}`;
     const requestOptions = {
       method: 'POST',
       body: formData

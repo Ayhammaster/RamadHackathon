@@ -21,12 +21,12 @@ const ImageForm = () => {
     e.preventDefault();
     const formData = new FormData();
     formData.append('file', selectedFile);
-    formData.append('summarize', summarize);
+    formData.append('token', '1f51363c-081a-4e45-beca-ffc3c83e6340');
 
     try {
       setLoading(true); // Set loading to true when submitting the form
 
-      const response = await fetch('http://127.0.0.1:8000/ocr3', {
+      const response = await fetch('https://ramadhackathon-1.onrender.com/ocr/v3', {
         method: 'POST',
         body: formData
       });
@@ -40,9 +40,9 @@ const ImageForm = () => {
         console.error('Failed to fetch');
       }
     } catch (error) {
-      console.error('Error:', error);
+        console.error('Error:', error);
     } finally {
-      setLoading(false); // Set loading to false after receiving the response or encountering an error
+        setLoading(false); // Set loading to false after receiving the response or encountering an error
     }
   };
 

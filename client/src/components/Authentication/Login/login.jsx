@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './login.css';
+import { LoginHandler } from '../../../API/auth/login';
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -18,7 +19,7 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      // Your login logic
+      LoginHandler(formData);
     } catch (error) {
       console.error('Error logging in:', error.message);
       // Display error flash message

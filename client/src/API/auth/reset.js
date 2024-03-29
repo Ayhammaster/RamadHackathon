@@ -1,14 +1,14 @@
-async function LoginHandler(loginData) {
+async function ResetPassword(resetData) {
     const requestOptions = {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(loginData)
+      body: JSON.stringify(resetData)
     };
   
     try {
-      const response = await fetch('https://ramadhackathon-1.onrender.com/login', requestOptions);
+      const response = await fetch('https://ramadhackathon-1.onrender.com/reset-password', requestOptions);
       if (response.status === 401) {
         throw new Error('Invalid username or password');
       }
@@ -20,4 +20,4 @@ async function LoginHandler(loginData) {
     }
 }
   
-export { LoginHandler };
+export { ResetPassword };

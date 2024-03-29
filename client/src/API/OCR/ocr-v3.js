@@ -1,5 +1,5 @@
 async function performOCRV3(formData, userToken) {
-    const url = `/ocr/v1?user_token=${encodeURIComponent(userToken)}`;
+    const url = `https://ramadhackathon-1.onrender.com/ocr/v1?user_token=${encodeURIComponent(userToken)}`;
     const requestOptions = {
       method: 'POST',
       body: formData

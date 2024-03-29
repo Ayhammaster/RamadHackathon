@@ -8,7 +8,7 @@ async function signup(userData) {
     };
   
     try {
-      const response = await fetch('/signup', requestOptions);
+      const response = await fetch('https://ramadhackathon-1.onrender.com/signup', requestOptions);
       const data = await response.json();
       return data;
     } catch (error) {
