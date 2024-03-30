@@ -1,0 +1,13 @@
+#docsContainer{
+    width: 100%;
+}
+
+#SwaggerContainer{
+    background-color: rgb(196, 206, 180);
+    width: 80%;
+    border-radius: 10px;
+    margin: auto;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    direction: ltr;
+}

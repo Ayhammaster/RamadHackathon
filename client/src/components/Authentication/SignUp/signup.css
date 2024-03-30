@@ -1,0 +1,79 @@
+/* Main container */
+.signup-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    color: var(--sec-color);
+}
+  
+/* Form container */
+.signup-form {
+    width: 400px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 0 10px var(--sec-color);
+    background-color: var(--dark-color);
+}
+  
+/* Form inputs */
+.signup-input input {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid var(--sec-color);
+    border-radius: 5px;
+    outline: none;
+    box-shadow: 0 0 4px var(--sec-color);
+    color: var(--sec-color);
+    background-color: var(--main-color);
+    font-size: larger;
+}
+
+/* Submit button */
+.signup-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #143d63;
+    color: var(--sec-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.signup-button:hover {
+    background-color: #b8905b;
+    color: white;
+}
+
+/* Flash message */
+.flash-message {
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* Success flash message */
+.success-message {
+    color: green;
+    background-color: lightgreen;
+    padding: 10px;
+    border-radius: 5px;
+}
+  
+/* Error flash message */
+.error-message {
+    color: red;
+    background-color: lightcoral;
+    padding: 10px;
+    border-radius: 5px;
+}
+  
+/* Media query for smaller devices */
+@media screen and (max-width: 600px) {
+    .signup-form {
+      width: 80%;
+    }
+}

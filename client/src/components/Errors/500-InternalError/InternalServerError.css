@@ -1,0 +1,51 @@
+#InternalServerErrorContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--dark-color);
+    border: 1px solid var(--sec-color);
+    border-radius: 15px;
+    box-shadow: 0 0 50px var(--main-color);
+    width: 70%;
+    margin: auto;
+    margin-top: 3rem;
+    text-align: center;
+}
+
+#InternalServerErrorContainer h1 {
+    color: var(--sec-color);
+}
+
+#InternalServerErrorContainer a, #InternalServerErrorContainer p {
+    color: var(--sec-color);
+    font-family: 'El Messiri', sans-serif;
+}
+
+#InternalServerErrorContainer a:hover {
+    color: var(--bg-color);
+}
+
+#InternalServerErrorContainer img {
+    cursor: pointer;
+}
+
+#InternalServerErrorCompanyLogo img {
+    width: 20rem;
+    height: auto;
+    margin-right: 20px;
+    margin: auto;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    #InternalServerErrorContainer {
+      width: 100%;
+      height: 100vh;
+      margin: 0;
+      margin-top: auto;
+      text-align: center;
+      border: none;
+      background-color: var(--blacker-color);
+    }
+}
